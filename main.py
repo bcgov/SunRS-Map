@@ -1,3 +1,5 @@
+import os   #  Usages: get_folders()   
+import sys  #  Usages: main()
 from Sample import Sample
 
 def compare_scores():
@@ -9,7 +11,15 @@ def render():
 def print_values(values):
    print (values)
 
-def get_folders():
+# Given a folder path, return list of folders in specified folder.
+def get_folders(path):
+   temp_folders = []
+   curFolders = os.listdir(path)
+   for folder in curFolders:
+      if(os.path.isdir(os.path.join(path, folder))):
+         temp_folders.append(folder)
+   return temp_folders
+
    # Go through the data folder and get all values of items that are of type .dir
    # Return list
    #TODO: Sam do this
@@ -17,7 +27,8 @@ def get_folders():
 
 def main():
    print_values("Starting the thing")
-   folders = get_folders()
+   workingDir = sys.path[0]
+   folders = get_folders(workingDir + '/data')
 
    samples = []
    # TODO: Sam do this part too
