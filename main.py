@@ -12,6 +12,7 @@ def print_values(values):
    print (values)
 
 # Given a folder path, return list of folders in specified folder.
+# TODO: Add check if path valid
 def get_folders(path):
    temp_folders = []
    curFolders = os.listdir(path)
@@ -25,15 +26,18 @@ def get_folders(path):
    #TODO: Sam do this
    pass
 
+
 def main():
    print_values("Starting the thing")
    workingDir = sys.path[0]
-   folders = get_folders(workingDir + '/data')
+   dataPath = workingDir + '/data'
+   folderList = get_folders(dataPath+"/")
 
    samples = []
    # TODO: Sam do this part too
-   for file in folders:
-      temp = Sample(file)
+   
+   for folder in folderList:
+      temp = Sample(dataPath + folder)
       samples.append(temp)
 
    print_values("Done the thing")
