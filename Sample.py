@@ -1,7 +1,6 @@
 class Sample:
    def __init__(self) -> None:
       self.folderName  = ""
-      self.highestPoint      = [0,0,0]
       
 
    def calc_highest_point(self):
@@ -9,3 +8,12 @@ class Sample:
 
    def read_file_in_folder(self):
       pass
+   
+   def find_highest_point():
+      pass
+
+   def compute_score():
+      # find biggest number
+      pass
+
+   
