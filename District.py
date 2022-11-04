@@ -16,6 +16,15 @@ class District:
    def get_best_point(self):
       pass
 
+   def add_point(self, point):
+      pass
+
+   def set_best_point(self, point):
+      pass
+
+   def set_district_score(self, score):
+      pass
+
    def read_point_in_file(self):
       pass
 
