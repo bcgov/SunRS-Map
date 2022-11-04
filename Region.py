@@ -1,5 +1,5 @@
 import os
-class Sample:
+class Region:
    def __init__(self, folderName) -> None:
       self.folderName  = folderName
       self.district_scores      = []                        # Scores of all locations in Sample folder (Ordered from highest to lowest? If we sort while we insert, the search for highest score will be quicker)
@@ -12,7 +12,7 @@ class Sample:
       for file in folders:
          f = open(folderName+"/"+file, "r")
          for line in file:
-            self.scores.append(self.find_highest_point(line))
+            self.district_scores.append(self.find_highest_point(line))
          f.close()
       pass
    
@@ -30,19 +30,19 @@ class Sample:
       highest_point = 0
 
 
-      self.set_score(highest_point)
+      self.set_region_score(highest_point)
       pass      
 
    def get_region_score(self):
       pass
 
-   def set_score(self, value):
-      self.score = value
+   def set_region_score(self, value):
+      self.region_score = value
 
    def get_score(self, value):
-      return self.score
+      return self.region_score
 
-   def print_sample(self):
+   def print_region(self):
       print(self.folderName)
       print(self.get_score())
 

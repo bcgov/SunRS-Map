@@ -1,6 +1,6 @@
 import os   #  Usages: get_folders()   
 import sys  #  Usages: main()
-from Sample import Sample
+from Region import Region
 
 # Given 2 scores (or samples) compare and return > 0 if the first is higher, 0 if equal, < 0 if less (Could do 1, 0, -1 but I wanted to try this.)
 def compare_scores(score1, score2):
@@ -29,14 +29,14 @@ def get_folders(path):
    #TODO: Sam do this
 
 # Returns the sample with the highest score
-def get_highscore(sample_List):
+def get_highscore(region_List):
    max_val = 0    # type int
-   max_sample = 0 # type Sample
-   for sample in sample_List:
-      if(sample.get_score() > max_val):
-         max_val = sample.get_score()
-         max_sample = sample
-   return max_sample
+   max_region = 0 # type Region
+   for region in region_List:
+      if(region.get_score() > max_val):
+         max_val = region.get_score()
+         max_region = region
+   return max_region
 
 def main():
    print_values("Starting the thing")
@@ -44,11 +44,11 @@ def main():
    dataPath = workingDir + '/data'  # type string
    folderList = get_folders(dataPath)  # type list(string)
 
-   samples = []   # type list(Samples)
+   regions = []   # type list(regions)
    
    for folder in folderList:
-      temp = Sample(dataPath +"/" + folder)  # type Sample
-      samples.append(temp)
+      temp = Region(dataPath +"/" + folder)  # type Region
+      regions.append(temp)
 
    print_values("Done the thing")
 
