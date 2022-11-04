@@ -24,20 +24,19 @@ def get_folders(path):
    # Go through the data folder and get all values of items that are of type .dir
    # Return list
    #TODO: Sam do this
-   pass
 
 
 def main():
    print_values("Starting the thing")
    workingDir = sys.path[0]
    dataPath = workingDir + '/data'
-   folderList = get_folders(dataPath+"/")
+   folderList = get_folders(dataPath)
 
    samples = []
    # TODO: Sam do this part too
    
    for folder in folderList:
-      temp = Sample(dataPath + folder)
+      temp = Sample(dataPath +"/" + folder)
       samples.append(temp)
 
    print_values("Done the thing")

@@ -7,10 +7,9 @@ class Sample:
 
    def read_file_in_folder(self, folderName):
 
-      folder = os.listdir(folderName)
-      for file in folder:
-         print (file)
-         f = open(file, "r")
+      folders = os.listdir(folderName)
+      for file in folders:
+         f = open(folderName+"/"+file, "r")
          for line in file:
             self.scores.append(self.find_highest_point(line))
          f.close()
@@ -18,9 +17,10 @@ class Sample:
    
    def find_highest_point(self, value):
       temp = 0
-      if (value > temp):
-         temp = value
-      return value
+      intValue = int(value)
+      if (intValue > temp):
+         temp = intValue
+      return intValue
 
    def compute_score(self):
       # find biggest number
@@ -32,5 +32,5 @@ class Sample:
 
    def set_score(self, value):
       self.score = value
-
-   
+      # I m
+ 
