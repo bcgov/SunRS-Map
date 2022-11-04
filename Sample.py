@@ -36,5 +36,9 @@ class Sample:
 
    def get_score(self, value):
       return self.score
+
+   def print_sample(self):
+      print(self.folderName)
+      print(self.get_score())
       
  

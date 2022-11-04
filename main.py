@@ -17,8 +17,8 @@ def print_values(values):
 # Given a folder path, return list of folders in specified folder.
 # TODO: Add check if path valid
 def get_folders(path):
-   temp_folders = []
-   current_folder = os.listdir(path)
+   temp_folders = []                   # type list(string)
+   current_folder = os.listdir(path)   # type list(string)
    for folder in current_folder:
       if(os.path.isdir(os.path.join(path, folder))):
          temp_folders.append(folder)
@@ -30,8 +30,8 @@ def get_folders(path):
 
 # Returns the sample with the highest score
 def get_highscore(sample_List):
-   max_val = 0
-   max_sample = 0
+   max_val = 0    # type int
+   max_sample = 0 # type Sample
    for sample in sample_List:
       if(sample.get_score() > max_val):
          max_val = sample.get_score()
@@ -40,14 +40,14 @@ def get_highscore(sample_List):
 
 def main():
    print_values("Starting the thing")
-   workingDir = sys.path[0]
-   dataPath = workingDir + '/data'
-   folderList = get_folders(dataPath)
+   workingDir = sys.path[0]         # type string
+   dataPath = workingDir + '/data'  # type string
+   folderList = get_folders(dataPath)  # type list(string)
 
-   samples = []
+   samples = []   # type list(Samples)
    
    for folder in folderList:
-      temp = Sample(dataPath +"/" + folder)
+      temp = Sample(dataPath +"/" + folder)  # type Sample
       samples.append(temp)
 
    print_values("Done the thing")
