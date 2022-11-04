@@ -7,6 +7,7 @@ def compare_scores(score1, score2):
    return score1 - score2
    pass
 
+# How do we want to render this? As a point on a map?
 def render():
    pass
 
@@ -17,8 +18,8 @@ def print_values(values):
 # TODO: Add check if path valid
 def get_folders(path):
    temp_folders = []
-   curFolders = os.listdir(path)
-   for folder in curFolders:
+   current_folder = os.listdir(path)
+   for folder in current_folder:
       if(os.path.isdir(os.path.join(path, folder))):
          temp_folders.append(folder)
    return temp_folders
@@ -27,6 +28,15 @@ def get_folders(path):
    # Return list
    #TODO: Sam do this
 
+# Returns the sample with the highest score
+def get_highscore(sample_List):
+   max_val = 0
+   max_sample = 0
+   for sample in sample_List:
+      if(sample.get_score() > max_val):
+         max_val = sample.get_score()
+         max_sample = sample
+   return max_sample
 
 def main():
    print_values("Starting the thing")
@@ -35,7 +45,6 @@ def main():
    folderList = get_folders(dataPath)
 
    samples = []
-   # TODO: Sam do this part too
    
    for folder in folderList:
       temp = Sample(dataPath +"/" + folder)

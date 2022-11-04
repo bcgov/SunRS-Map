@@ -2,7 +2,7 @@ import os
 class Sample:
    def __init__(self, folderName) -> None:
       self.folderName  = folderName
-      self.scores      = []
+      self.scores      = []                        # Scores of all locations in Sample folder (Ordered from highest to lowest? If we sort while we insert, the search for highest score will be quicker)
       self.read_file_in_folder(self.folderName)
 
    def read_file_in_folder(self, folderName):
@@ -24,6 +24,7 @@ class Sample:
 
    def compute_score(self):
       # find biggest number
+
       highest_point = 0
 
 
@@ -32,5 +33,8 @@ class Sample:
 
    def set_score(self, value):
       self.score = value
-      # I m
+
+   def get_score(self, value):
+      return self.score
+      
  
