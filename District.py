@@ -10,27 +10,24 @@ class District:
       self.read_point_in_file(self.fileName)
 
    def get_filename(self):
-      pass
+      return self.filename
 
    def get_points(self):
-      pass
+      return self.points
 
    def get_best_point(self):
-      pass
+      return self.best_point
 
    def get_district_score(self):
-      pass
+      return self.district_score
 
    def set_best_point(self, point):
-      pass
-
-   def read_point_in_file(self):
-      pass
+      self.best_point = point
 
    def find_best_point(self):
       pass
 
    def add_point(self, point):
-      pass
+      self.points.append(point)
 
    
