@@ -1,8 +1,9 @@
 import os
 class Point:
-   def __init__(self, fileName) -> None:
+   # Will a point be an area or a single lat lon value?
+   def __init__(self, lat, lon) -> None:
       self.score            = 0 # To be set in District.py
-      self.lat              = 0
+      self.lat              = 0 
       self.lon              = 0
       self.elevation        = 0
     
