@@ -2,6 +2,7 @@ import os   #  Usages: get_folders()
 import sys  #  Usages: main()
 from Region import Region
 
+
 # Given 2 scores (or samples) compare and return > 0 if the first is higher, 0 if equal, < 0 if less (Could do 1, 0, -1 but I wanted to try this.)
 def compare_scores(score1, score2):
    return score1 - score2

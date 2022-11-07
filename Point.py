@@ -15,13 +15,13 @@ class Point:
    def get_lat(self):
       pass
 
-   def get_lon(self):
-      pass
-
    def set_lat(self, lat):
       pass
 
-   def set_long(self,lon):
+   def get_lon(self):
+      pass
+
+   def set_lon(self,lon):
       pass
 
    def get_elevation(self):

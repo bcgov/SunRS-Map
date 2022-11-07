@@ -1,4 +1,6 @@
 import os
+from District import District
+
 class Region:
    def __init__(self, folderName) -> None:
       self.folderName  = folderName
