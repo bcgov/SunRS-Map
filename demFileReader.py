@@ -3,19 +3,19 @@ import rasterio as rio
 from rasterio.plot import show
 import matplotlib.pyplot as plt
 
+path = "data/95a/095a01_e.dem"
+
+dem = rio.open(path)
+dem_array = dem.read(1).astype('float64')
 
 
-# dem = rio.open("data/102i/102i08_e.dem")
-# dem_array = dem.read(1).astype('float64')
-#
-#
-# fig, ax = plt.subplots(1, figsize=(12, 12))
-#
-# show(dem_array, cmap='Greys_r', ax=ax)
-#
-# plt.axis("off")
-# plt.show()
-path = "data/102i/102i08_e.dem"
+fig, ax = plt.subplots(1, figsize=(12, 12))
+
+show(dem_array, cmap='Greys_r', ax=ax)
+
+plt.axis("off")
+plt.show()
+
 
 with rio.open(path) as f:
     arr = f.read(1)
