@@ -9,13 +9,13 @@ class DEMReader:
       for line in f:
          print(line)
       f.close()   
-      pass 
+      return 1 
 
    def read_folder(self, path):
       folders = os.listdir(path)
       for file in folders:
          f = open(path, 'r')
-         for line in file:
-            continue
+         for line in f:
+            print(line)
          f.close()   
-      pass  
+      return 1  
