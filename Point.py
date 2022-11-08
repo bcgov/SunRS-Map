@@ -8,25 +8,25 @@ class Point:
       self.elevation        = 0
     
    def get_score(self):
-      pass
+      return self.score
 
    def set_score(self, score):
-      pass
+      self.score = score
 
    def get_lat(self):
-      pass
+      return self.lat
 
    def set_lat(self, lat):
-      pass
+      self.lat = lat
 
    def get_lon(self):
-      pass
+      return self.lon
 
    def set_lon(self,lon):
-      pass
+      self.lon = lon
 
    def get_elevation(self):
-      pass
+      return self.elevation
 
    def set_elevaton(self, elevation):
-      pass
+      self.elevation = elevation

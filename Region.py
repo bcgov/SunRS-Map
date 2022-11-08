@@ -19,16 +19,16 @@ class Region:
       self.region_score = value
 
    def get_districts(self):
-      return
+      return self.districts
 
    def add_district(self, district):
-      pass
+      self.districts.append(district)
 
    def get_best_district(self):
-      pass
+      return self.best_district
 
    def set_best_district(self, district):
-      pass
+      self.best_district = district
 
 
    def read_file_in_folder(self, folderName):
@@ -46,16 +46,7 @@ class Region:
       intValue = int(value)
       if (intValue > temp):
          temp = intValue
-      return intValue
-
-   # Computes the score of a district
-   def compute_score(self):
-      # find biggest number
-
-      highest_point = 0
-
-      self.set_region_score(highest_point)
-      pass      
+      return intValue   
 
    def print_region(self):
       print(self.folderName)
