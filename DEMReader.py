@@ -10,16 +10,18 @@ import glob
 class DEMReader:
    def __init__(self, data_path) -> None:
       self.data_path = data_path
+      self.data_files = []
       self.read_folder(data_path)
       pass
 
    def read_file(self, path):
       dem = rio.open(path)
-      dem_array = dem.read(1).astype('float64')
-      fig, ax = plt.subplots(1, figsize=(12, 12))
-      show(dem_array, cmap="Greys_r", ax=ax)
-      plt.axis("off")
-      plt.show()
+      self.data_files.append(dem)
+      # dem_array = dem.read(1).astype('float64')
+      # fig, ax = plt.subplots(1, figsize=(12, 12))
+      # show(dem_array, cmap="Greys_r", ax=ax)
+      # plt.axis("off")
+      # plt.show()
       return 1
 
    def read_folder(self, path):
@@ -33,3 +35,7 @@ class DEMReader:
          else:
             print(fpath + " Is not a folder or a file")
       return 1
+
+   def show_map(self, display_type):
+      mosaic, out_trans = merge(self.data_files)
+      show(mosaic, cmap=display_type)

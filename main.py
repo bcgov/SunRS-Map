@@ -18,6 +18,7 @@ def main():
    data_path = sys.path[0] + '/data'
    demr = dem_reader(data_path)
    demr.read_folder(data_path)
+   demr.show_map("Greys_r")
    print_values("Done the thing")
    pass
 
