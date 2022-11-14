@@ -128,5 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Data Files
-data/
+.idea/codeStyles/codeStyleConfig.xml
+.idea/workspace.xml.tmp
+.idea/inspectionProfiles/Project_Default.xml

@@ -1,12 +1,12 @@
 import os
 from Region import Region
 
+
 class Province:
    def __init__(self, province) -> None:
-      self.province        = province
-      self.regions       = []                        # Scores of all locations in Sample folder (Ordered from highest to lowest? If we sort while we insert, the search for highest score will be quicker)
-      self.best_region   = 0
-      self.read_file_in_folder(self.folderName)
+      self.province = province
+      self.regions = []  # Scores of all locations in Sample folder (Ordered from highest to lowest? If we sort while we insert, the search for highest score will be quicker)
+      self.best_region = 0
 
    def get_province(self):
       return self.province
