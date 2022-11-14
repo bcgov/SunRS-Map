@@ -1,16 +1,37 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import os   #  Usages: get_folders()
+import sys  #  Usages: main()
+from Region import Region
+from DEMReader import DEMReader as dem_reader
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# How do we want to render this? As a point on a map?
+def render():
+   pass
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+def print_values(values):
+   print(values)
+
+
+def main():
+   print_values("Starting the thing")
+   data_path = sys.path[0] + '/data'
+   demr = dem_reader(data_path)
+   demr.read_folder(data_path)
+   print_values("Done the thing")
+   pass
+
+
+main()
+
+# Where is the greatest _____ in this sample area
+# Score directly impacts what the greatest ___ means
+
+# Extracts our data from our source files
+# give a score to the sources files
+# act based on that score
+
+
+# set_score_highest()
+# set_score_lowest()
+# assign_score really complicated
