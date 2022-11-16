@@ -1,13 +1,13 @@
 import os
 from Point import Point
 
+
 class District:
    def __init__(self, filename) -> None:
       self.filename           = filename
-      self.points       = []                        # Scores of all locations in Sample folder (Ordered from highest to lowest? If we sort while we insert, the search for highest score will be quicker)
+      self.points             = []                        # Scores of all locations in Sample folder (Ordered from highest to lowest? If we sort while we insert, the search for highest score will be quicker)
       self.best_point         = 0
       self.district_score     = 0                   # Assigned by Region.py
-      self.read_point_in_file(self.fileName)
 
    def get_filename(self):
       return self.filename

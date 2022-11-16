@@ -2,6 +2,7 @@ import os   #  Usages: get_folders()
 import sys  #  Usages: main()
 from Region import Region
 from DEMReader import DEMReader as dem_reader
+from Zone import Zone
 
 
 # How do we want to render this? As a point on a map?
@@ -16,9 +17,11 @@ def print_values(values):
 def main():
    print_values("Starting the thing")
    data_path = sys.path[0] + '/data'
+   province = Zone(data_path)
    demr = dem_reader(data_path)
-   demr.read_folder(data_path)
-   demr.show_map("Greys_r")
+   province = demr.read_folder(data_path)
+   # demr.show_map("Greys_r")
+
    print_values("Done the thing")
    pass
 
