@@ -1,3 +1,4 @@
+from Point import Point
 class Zone:
    def __init__(self, name) -> None:
       self.name            = name
@@ -31,3 +32,18 @@ class Zone:
 
    def set_zone_score(self, zone_score):
       self.zone_score = zone_score
+
+   def calculate_score(self):
+      if self.sub_zones:
+         if all(sub_zone.type == Point for sub_zone in self.sub_zones):
+            for point in self.sub_zones:
+               point.calculate_score()
+         elif all(sub_zone.type == Zone for sub_zone in self.sub_zones):
+            for sub_zone in self.sub_zones:
+               sub_zone.calculate_score()
+         else:
+            print("Bad type in subzone list")
+      else:
+         print("Sub_zone list is empty")
+
+   
