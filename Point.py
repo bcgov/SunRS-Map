@@ -3,8 +3,8 @@ import os
 
 class Point:
    # Will a point be an area or a single lat lon value?
-   def __init__(self, lat, lon) -> None:
-      self.score            = 0 # To be set in District.py
+   def __init__(self, lat, lon, elevation) -> None:
+      self.score            = 0
       self.lat              = 0 
       self.lon              = 0
       self.elevation        = 0
@@ -30,7 +30,7 @@ class Point:
    def get_elevation(self):
       return self.elevation
 
-   def set_elevaton(self, elevation):
+   def set_elevation(self, elevation):
       self.elevation = elevation
 
    def calculate_score(self):

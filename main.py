@@ -18,8 +18,9 @@ def main():
    print_values("Starting the thing")
    data_path = sys.path[0] + '/data'
    province = Zone(data_path)
-   demr = dem_reader(data_path)
+   demr = dem_reader()
    province = demr.read_folder(data_path)
+   province.calculate_score()
    # demr.show_map("Greys_r")
 
    print_values("Done the thing")

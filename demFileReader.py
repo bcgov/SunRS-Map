@@ -3,7 +3,7 @@ import rasterio as rio
 from rasterio.plot import show
 import matplotlib.pyplot as plt
 
-path = "data/95a/095a01_e.dem"
+path = "data/2019tifs/bc_092b044_xl1m_utm10_2019.tif"
 
 dem = rio.open(path)
 dem_array = dem.read(1).astype('float64')
