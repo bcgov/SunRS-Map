@@ -25,7 +25,7 @@ class DEMReader:
                                  names=['id', 'x', 'y', 'elev'])
       result.sort(order='elev')
       descending_result = result[::-1]
-      for point in descending_result[:10]:
+      for point in descending_result[:10]:                  # Will only store the top 10 values in the file. Will need to expand this in the future
          new_point = Point(point[1], point[2], point[3])    # X,Y,elevation
          zone.add_to_sub_zones(new_point)
       print(zone.get_sub_zones())

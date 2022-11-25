@@ -35,4 +35,3 @@ class Point:
 
    def calculate_score(self):
       self.set_score(self.get_elevation())
-      return self.score

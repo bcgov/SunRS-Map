@@ -4,7 +4,7 @@ class Zone:
       self.name            = name
       self.sub_zones       = []
       self.best_sub_zone   = 0
-      self.zone_score      = 0
+      self.score      = 0
 
    def get_name(self):
       return self.name
@@ -24,26 +24,24 @@ class Zone:
    def get_best_sub_zone(self):
       return self.best_sub_zone
 
-   def set_best_sub_zone(self, sub_zone):
-      self.best_sub_zone = sub_zone
+   def set_best_sub_zone(self):
+      self.best_sub_zone = self.sub_zones[0]
 
-   def get_zone_score(self):
-      return self.zone_score
+   def get_score(self):
+      return self.score
 
-   def set_zone_score(self, zone_score):
-      self.zone_score = zone_score
+   def set_score(self):
+      self.score = self.get_best_sub_zone().get_score()
 
    def calculate_score(self):
       if self.sub_zones:
-         if all(sub_zone.type == Point for sub_zone in self.sub_zones):
-            for point in self.sub_zones:
-               point.calculate_score()
-         elif all(sub_zone.type == Zone for sub_zone in self.sub_zones):
-            for sub_zone in self.sub_zones:
-               sub_zone.calculate_score()
-         else:
-            print("Bad type in subzone list")
+         for sub_zone in self.sub_zones:
+            sub_zone.calculate_score()
+         self.sort_sub_zones()
+         self.set_best_sub_zone()
+         self.set_score()
       else:
          print("Sub_zone list is empty")
 
-   
+   def sort_sub_zones(self):
+      self.sub_zones.sort(key=lambda subzone: subzone.zone_score(), reverse=True)

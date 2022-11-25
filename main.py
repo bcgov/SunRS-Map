@@ -21,6 +21,7 @@ def main():
    demr = dem_reader()
    province = demr.read_folder(data_path)
    province.calculate_score()
+   print_values(province.get_score())
    # demr.show_map("Greys_r")
 
    print_values("Done the thing")
