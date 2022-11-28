@@ -4,10 +4,11 @@ import os
 class Point:
    # Will a point be an area or a single lat lon value?
    def __init__(self, lat, lon, elevation) -> None:
-      self.score            = 0
-      self.lat              = 0 
-      self.lon              = 0
-      self.elevation        = 0
+      self.lat              = lat
+      self.lon              = lon
+      self.elevation        = elevation
+      self.set_score(elevation)
+      self.score            = self.get_score()
     
    def get_score(self):
       return self.score

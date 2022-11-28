@@ -14,21 +14,17 @@ class DEMReader:
 
    def read_file(self, path):
       zone = Zone(path)
-      with rio.open(path) as f:
-         arr = f.read(1)
-         mask = (arr != f.nodata)
-         elev = arr[mask]
-         col, row = np.where(mask)
-         x, y = f.xy(col, row)
-         uid = np.arange(f.height * f.width).reshape((f.height, f.width))[mask]
-      result = np.rec.fromarrays([uid, x, y, elev],
-                                 names=['id', 'x', 'y', 'elev'])
+
+      result = self.eval_dem_file(path)
       result.sort(order='elev')
       descending_result = result[::-1]
+
       for point in descending_result[:10]:                  # Will only store the top 10 values in the file. Will need to expand this in the future
          new_point = Point(point[1], point[2], point[3])    # X,Y,elevation
          zone.add_to_sub_zones(new_point)
-      print(zone.get_sub_zones())
+      zone.calculate_score()
+      print(zone.get_score())
+
       return zone
 
    def read_folder(self, path):
@@ -44,7 +40,15 @@ class DEMReader:
             print(fpath + " Is not a folder or a file?")
       return zone
 
-
+   def eval_dem_file(self, path):
+      with rio.open(path) as f:
+         arr = f.read(1)
+         mask = (arr != f.nodata)
+         elev = arr[mask]
+         col, row = np.where(mask)
+         x, y = f.xy(col, row)
+         uid = np.arange(f.height * f.width).reshape((f.height, f.width))[mask]
+         return np.rec.fromarrays([uid, x, y, elev], names=['id', 'x', 'y', 'elev'])
 
    # Values at -32767 mean there was no data
 
