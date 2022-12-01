@@ -47,3 +47,11 @@ class Zone:
 
    def sort_sub_zones(self):
       self.sub_zones.sort(key=lambda subzone: subzone.get_score(), reverse=True)
+
+   def is_zone(self):
+      return True
+   def get_coords(self):
+      if self.get_best_sub_zone().is_zone():
+         return self.get_best_sub_zone().get_coords()
+      else:
+         return self.get_best_sub_zone()

@@ -36,3 +36,6 @@ class Point:
 
    def calculate_score(self):
       self.set_score(self.get_elevation())
+
+   def is_zone(self):
+      return False
