@@ -23,7 +23,6 @@ def main():
    province.calculate_score()
    print_values("The best score is: ")
    print_values(province.get_score())
-   print_values(province.get_best_sub_zone())
    print_values(province.get_coords().get_lat())
    print_values(province.get_coords().get_lon())
    # demr.show_map("Greys_r")

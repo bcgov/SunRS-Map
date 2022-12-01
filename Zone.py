@@ -50,6 +50,7 @@ class Zone:
 
    def is_zone(self):
       return True
+
    def get_coords(self):
       if self.get_best_sub_zone().is_zone():
          return self.get_best_sub_zone().get_coords()

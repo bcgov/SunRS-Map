@@ -23,7 +23,6 @@ class DEMReader:
          new_point = Point(point[1], point[2], point[3])    # X,Y,elevation
          zone.add_to_sub_zones(new_point)
       zone.calculate_score()
-      print(zone.get_score())
 
       return zone
 
